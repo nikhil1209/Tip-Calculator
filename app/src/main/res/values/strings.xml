@@ -1,10 +1,11 @@
 <resources>
     <string name="app_name">TipCalculator</string>
-    <string name="tippercentage">Tip Percentage</string>
+    <string name="tippercentage">Tip Percentage:</string>
     <string name="title">"Know Your Tip! "</string>
     <string name="calc">Calculate Tip!</string>
-    <string name="t">Confirmation</string>
-    <string name="msg">Are you sure to calculate tip?</string>
+    <string name="t">Cofirm Again</string>
+    <string name="msg">Are you sure you want to calculate tip at ?</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
+
 </resources>

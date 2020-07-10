@@ -41,6 +41,15 @@ public class MainActivity extends AppCompatActivity {
         skbr.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                if(progress<8){
+                    prcnt.setTextColor(getResources().getColor(R.color.low));
+                }
+
+                if(progress>=8&&progress<=16){
+                    prcnt.setTextColor(getResources().getColor(R.color.medium));
+                }
+                if(progress>16)
+                    prcnt.setTextColor(getResources().getColor(R.color.high));
                 prcnt.setText(String.valueOf(progress)+" %");
                 s=progress;
             }
@@ -58,14 +67,15 @@ public class MainActivity extends AppCompatActivity {
 
         alert=new AlertDialog.Builder(MainActivity.this);
         alert.setTitle(R.string.t);
-        alert.setMessage(R.string.msg);
+        alert.setIcon(android.R.drawable.ic_dialog_info);
+        alert.setMessage("Are you sure?");
         alert.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 r=s*0.01*Integer.parseInt(amnt.getText().toString());
                 int a=(int)r;
                 tv.setText("Tip is: Rs "+a);
-                ttamt.setText("Your Total Amount paid is: Rs "+(a+Integer.parseInt(amnt.getText().toString())));
+                ttamt.setText("Your Total Amount paid is: Rs "+(a+Integer.parseInt(amnt.getText().toString()))+"/-");
             }
         });
         alert.setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
